@@ -195,25 +195,18 @@ function showResult() {
     // Текст сообщения для Telegram
     let message = `🎯 Новый результат теста!\n👤 Имя: ${userName}\n📊 Процент: ${percentage}%\n✅ Правильных ответов: ${score} из ${questions.length}`;
 
-    // Твои данные (токен и твой chat_id)
+    // Твои данные бота
     let botToken = "8826251373:AAHbc1JadD51qBwOxrQL8AveusPDyicOb3Lo";
     let chatId = "6334024142";
 
-    // Отправка в Telegram
-    fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            chat_id: chatId,
-            text: message
-        })
-    })
-    .then(response => console.log("Результат отправлен!"))
-    .catch(error => console.error("Ошибка:", error));
+    // Отправка через специальный метод с режимом no-cors или через API Telegram
+    let url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=` + encodeURIComponent(message);
 
-    // Логика сообщений на экране
+    // Используем Image для отправки запроса без блокировок браузера (обход CORS)
+    let img = new Image();
+    img.src = url;
+
+    // Логика сообщений на экране для друга
     if (percentage < 60) {
         resultEmoji.textContent = "❌";
         resultMessage.textContent = "Ты меня совсем не знаешь! Надо срочно исправляться и чаще общаться 😅.";
