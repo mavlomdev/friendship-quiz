@@ -1,0 +1,209 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    background-color: #0d0f18;
+    color: #f3f4f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.bg-glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(13, 15, 24, 0) 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.container {
+    background: rgba(23, 25, 38, 0.85);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.screen {
+    display: none;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.screen.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.icon-badge {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #ffffff;
+}
+
+h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #ffffff;
+    line-height: 1.4;
+}
+
+p {
+    color: #9ca3af;
+    font-size: 16px;
+    margin-bottom: 24px;
+    line-height: 1.5;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 16px 20px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(15, 17, 26, 0.8);
+    color: #fff;
+    font-size: 18px;
+    outline: none;
+    transition: all 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.3);
+}
+
+.btn {
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+    color: white;
+    border: none;
+    padding: 16px 24px;
+    border-radius: 14px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6);
+}
+
+.quiz-header {
+    margin-bottom: 20px;
+}
+
+#question-count {
+    font-size: 14px;
+    font-weight: 600;
+    color: #818cf8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+#progress {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #6366f1, #a855f7);
+    transition: width 0.4s ease;
+    border-radius: 4px;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.option-btn {
+    background: rgba(255, 255, 255, 0.03);
+    color: #e5e7eb;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 14px 18px;
+    border-radius: 14px;
+    text-align: left;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.option-btn:hover {
+    background: rgba(99, 102, 241, 0.1);
+    border-color: #6366f1;
+    transform: translateX(4px);
+}
+
+.score-card {
+    background: rgba(15, 17, 26, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 16px;
+    margin: 20px 0;
+}
+
+#score-percentage {
+    font-size: 56px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #818cf8, #c084fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: block;
+}
+
+.score-label {
+    font-size: 14px;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.result-name-text {
+    font-size: 18px;
+    color: #d1d5db;
+    margin-bottom: 10px;
+}

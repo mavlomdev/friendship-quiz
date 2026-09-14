@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест: Насколько хорошо ты меня знаешь?</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="bg-glow"></div>
+
+    <div class="container">
+        <!-- Экран приветствия -->
+        <div id="start-screen" class="screen active">
+            <div class="icon-badge">🎯</div>
+            <h1>Тест на знание меня</h1>
+            <p>Пройди этот тест и узнай, насколько хорошо ты меня знаешь. Слабо набрать все 100%?</p>
+            <div class="input-group">
+                <input type="text" id="username" placeholder="Введи своё имя..." autocomplete="off">
+            </div>
+            <button id="start-btn" class="btn">Начать испытание</button>
+        </div>
+
+        <!-- Экран с вопросами -->
+        <div id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <span id="question-count">Вопрос 1 из 24</span>
+                <div class="progress-bar">
+                    <div id="progress"></div>
+                </div>
+            </div>
+            
+            <h2 id="question-text">Текст вопроса</h2>
+            
+            <div id="options-container" class="options">
+                <!-- Варианты ответов подставляются через JS -->
+            </div>
+        </div>
+
+        <!-- Экран результатов -->
+        <div id="result-screen" class="screen">
+            <div class="icon-badge" id="result-emoji">🔥</div>
+            <h2>Результаты теста</h2>
+            <p id="result-name" class="result-name-text"></p>
+            
+            <div class="score-card">
+                <span id="score-percentage">0%</span>
+                <span class="score-label">уровень совпадения</span>
+            </div>
+            
+            <p id="result-message"></p>
+            <button id="restart-btn" class="btn" onclick="location.reload()">Пройти заново</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
