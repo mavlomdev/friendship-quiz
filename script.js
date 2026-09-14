@@ -177,9 +177,9 @@ function selectOption(selectedIndex) {
     currentQuestionIndex++;
 
     if (currentQuestionIndex < questions.length) {
-        loadQuestion(8826251373:AAHbclJaD51QbwOxrqL8AveuspDYicOb3Lo);
+        loadQuestion();
     } else {
-        showResult(6334024142);
+        showResult();
     }
 }
 
