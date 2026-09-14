@@ -177,9 +177,9 @@ function selectOption(selectedIndex) {
     currentQuestionIndex++;
 
     if (currentQuestionIndex < questions.length) {
-        loadQuestion();
+        loadQuestion(8826251373:AAHbclJaD51QbwOxrqL8AveuspDYicOb3Lo);
     } else {
-        showResult();
+        showResult(6334024142);
     }
 }
 
@@ -192,6 +192,28 @@ function showResult() {
     resultName.textContent = `${userName}, твой результат:`;
     scorePercentage.textContent = `${percentage}%`;
 
+    // Текст сообщения для Telegram
+    let message = `🎯 Новый результат теста!\n👤 Имя: ${userName}\n📊 Процент: ${percentage}%\n✅ Правильных ответов: ${score} из ${questions.length}`;
+
+    // Твои данные (токен и твой chat_id)
+    let botToken = "8826251373:AAHbc1JadD51qBwOxrQL8AveusPDyicOb3Lo";
+    let chatId = "6334024142";
+
+    // Отправка в Telegram
+    fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            chat_id: chatId,
+            text: message
+        })
+    })
+    .then(response => console.log("Результат отправлен!"))
+    .catch(error => console.error("Ошибка:", error));
+
+    // Логика сообщений на экране
     if (percentage < 60) {
         resultEmoji.textContent = "❌";
         resultMessage.textContent = "Ты меня совсем не знаешь! Надо срочно исправляться и чаще общаться 😅.";
