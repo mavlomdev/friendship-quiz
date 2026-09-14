@@ -196,7 +196,7 @@ function showResult() {
     let message = `🎯 Новый результат теста!\n👤 Имя: ${userName}\n📊 Процент: ${percentage}%\n✅ Правильных ответов: ${score} из ${questions.length}`;
 
     // Твои данные бота
-    let botToken = "8826251373:AAHbc1JadD51qBwOxrQL8AveusPDyicOb3Lo";
+    let botToken = "8826251373:AAHbclJaD51QbwOxrqL8AveuspDYicOb3Lo";
     let chatId = "6334024142";
 
     // Отправка через специальный метод с режимом no-cors или через API Telegram
